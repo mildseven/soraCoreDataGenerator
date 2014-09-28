@@ -1,0 +1,430 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7238DBD319D8C55A009B7C3E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7238DBD219D8C55A009B7C3E /* main.m */; };
+		7238DBD619D8C55A009B7C3E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7238DBD519D8C55A009B7C3E /* AppDelegate.m */; };
+		7238DBD919D8C55B009B7C3E /* soraCoreDataGenerator.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7238DBD719D8C55B009B7C3E /* soraCoreDataGenerator.xcdatamodeld */; };
+		7238DBDB19D8C55B009B7C3E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7238DBDA19D8C55B009B7C3E /* Images.xcassets */; };
+		7238DBDE19D8C55B009B7C3E /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7238DBDC19D8C55B009B7C3E /* MainMenu.xib */; };
+		7238DBEA19D8C55B009B7C3E /* soraCoreDataGeneratorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7238DBE919D8C55B009B7C3E /* soraCoreDataGeneratorTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7238DBE419D8C55B009B7C3E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7238DBC519D8C55A009B7C3E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7238DBCC19D8C55A009B7C3E;
+			remoteInfo = soraCoreDataGenerator;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7238DBCD19D8C55A009B7C3E /* soraCoreDataGenerator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = soraCoreDataGenerator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7238DBD119D8C55A009B7C3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7238DBD219D8C55A009B7C3E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7238DBD419D8C55A009B7C3E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		7238DBD519D8C55A009B7C3E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		7238DBD819D8C55B009B7C3E /* soraCoreDataGenerator.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = soraCoreDataGenerator.xcdatamodel; sourceTree = "<group>"; };
+		7238DBDA19D8C55B009B7C3E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		7238DBDD19D8C55B009B7C3E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		7238DBE319D8C55B009B7C3E /* soraCoreDataGeneratorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = soraCoreDataGeneratorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7238DBE819D8C55B009B7C3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7238DBE919D8C55B009B7C3E /* soraCoreDataGeneratorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = soraCoreDataGeneratorTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7238DBCA19D8C55A009B7C3E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7238DBE019D8C55B009B7C3E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7238DBC419D8C55A009B7C3E = {
+			isa = PBXGroup;
+			children = (
+				7238DBCF19D8C55A009B7C3E /* soraCoreDataGenerator */,
+				7238DBE619D8C55B009B7C3E /* soraCoreDataGeneratorTests */,
+				7238DBCE19D8C55A009B7C3E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7238DBCE19D8C55A009B7C3E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7238DBCD19D8C55A009B7C3E /* soraCoreDataGenerator.app */,
+				7238DBE319D8C55B009B7C3E /* soraCoreDataGeneratorTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7238DBCF19D8C55A009B7C3E /* soraCoreDataGenerator */ = {
+			isa = PBXGroup;
+			children = (
+				7238DBD419D8C55A009B7C3E /* AppDelegate.h */,
+				7238DBD519D8C55A009B7C3E /* AppDelegate.m */,
+				7238DBDA19D8C55B009B7C3E /* Images.xcassets */,
+				7238DBDC19D8C55B009B7C3E /* MainMenu.xib */,
+				7238DBD719D8C55B009B7C3E /* soraCoreDataGenerator.xcdatamodeld */,
+				7238DBD019D8C55A009B7C3E /* Supporting Files */,
+			);
+			path = soraCoreDataGenerator;
+			sourceTree = "<group>";
+		};
+		7238DBD019D8C55A009B7C3E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7238DBD119D8C55A009B7C3E /* Info.plist */,
+				7238DBD219D8C55A009B7C3E /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7238DBE619D8C55B009B7C3E /* soraCoreDataGeneratorTests */ = {
+			isa = PBXGroup;
+			children = (
+				7238DBE919D8C55B009B7C3E /* soraCoreDataGeneratorTests.m */,
+				7238DBE719D8C55B009B7C3E /* Supporting Files */,
+			);
+			path = soraCoreDataGeneratorTests;
+			sourceTree = "<group>";
+		};
+		7238DBE719D8C55B009B7C3E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7238DBE819D8C55B009B7C3E /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7238DBCC19D8C55A009B7C3E /* soraCoreDataGenerator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7238DBED19D8C55B009B7C3E /* Build configuration list for PBXNativeTarget "soraCoreDataGenerator" */;
+			buildPhases = (
+				7238DBC919D8C55A009B7C3E /* Sources */,
+				7238DBCA19D8C55A009B7C3E /* Frameworks */,
+				7238DBCB19D8C55A009B7C3E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = soraCoreDataGenerator;
+			productName = soraCoreDataGenerator;
+			productReference = 7238DBCD19D8C55A009B7C3E /* soraCoreDataGenerator.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7238DBE219D8C55B009B7C3E /* soraCoreDataGeneratorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7238DBF019D8C55B009B7C3E /* Build configuration list for PBXNativeTarget "soraCoreDataGeneratorTests" */;
+			buildPhases = (
+				7238DBDF19D8C55B009B7C3E /* Sources */,
+				7238DBE019D8C55B009B7C3E /* Frameworks */,
+				7238DBE119D8C55B009B7C3E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7238DBE519D8C55B009B7C3E /* PBXTargetDependency */,
+			);
+			name = soraCoreDataGeneratorTests;
+			productName = soraCoreDataGeneratorTests;
+			productReference = 7238DBE319D8C55B009B7C3E /* soraCoreDataGeneratorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7238DBC519D8C55A009B7C3E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = "Digital Bytes Inc.";
+				TargetAttributes = {
+					7238DBCC19D8C55A009B7C3E = {
+						CreatedOnToolsVersion = 6.0.1;
+					};
+					7238DBE219D8C55B009B7C3E = {
+						CreatedOnToolsVersion = 6.0.1;
+						TestTargetID = 7238DBCC19D8C55A009B7C3E;
+					};
+				};
+			};
+			buildConfigurationList = 7238DBC819D8C55A009B7C3E /* Build configuration list for PBXProject "soraCoreDataGenerator" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7238DBC419D8C55A009B7C3E;
+			productRefGroup = 7238DBCE19D8C55A009B7C3E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7238DBCC19D8C55A009B7C3E /* soraCoreDataGenerator */,
+				7238DBE219D8C55B009B7C3E /* soraCoreDataGeneratorTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7238DBCB19D8C55A009B7C3E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7238DBDB19D8C55B009B7C3E /* Images.xcassets in Resources */,
+				7238DBDE19D8C55B009B7C3E /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7238DBE119D8C55B009B7C3E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7238DBC919D8C55A009B7C3E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7238DBD919D8C55B009B7C3E /* soraCoreDataGenerator.xcdatamodeld in Sources */,
+				7238DBD619D8C55A009B7C3E /* AppDelegate.m in Sources */,
+				7238DBD319D8C55A009B7C3E /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7238DBDF19D8C55B009B7C3E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7238DBEA19D8C55B009B7C3E /* soraCoreDataGeneratorTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7238DBE519D8C55B009B7C3E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7238DBCC19D8C55A009B7C3E /* soraCoreDataGenerator */;
+			targetProxy = 7238DBE419D8C55B009B7C3E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7238DBDC19D8C55B009B7C3E /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7238DBDD19D8C55B009B7C3E /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7238DBEB19D8C55B009B7C3E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		7238DBEC19D8C55B009B7C3E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		7238DBEE19D8C55B009B7C3E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = soraCoreDataGenerator/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		7238DBEF19D8C55B009B7C3E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = soraCoreDataGenerator/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		7238DBF119D8C55B009B7C3E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = soraCoreDataGeneratorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/soraCoreDataGenerator.app/Contents/MacOS/soraCoreDataGenerator";
+			};
+			name = Debug;
+		};
+		7238DBF219D8C55B009B7C3E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = soraCoreDataGeneratorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/soraCoreDataGenerator.app/Contents/MacOS/soraCoreDataGenerator";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7238DBC819D8C55A009B7C3E /* Build configuration list for PBXProject "soraCoreDataGenerator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7238DBEB19D8C55B009B7C3E /* Debug */,
+				7238DBEC19D8C55B009B7C3E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7238DBED19D8C55B009B7C3E /* Build configuration list for PBXNativeTarget "soraCoreDataGenerator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7238DBEE19D8C55B009B7C3E /* Debug */,
+				7238DBEF19D8C55B009B7C3E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		7238DBF019D8C55B009B7C3E /* Build configuration list for PBXNativeTarget "soraCoreDataGeneratorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7238DBF119D8C55B009B7C3E /* Debug */,
+				7238DBF219D8C55B009B7C3E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		7238DBD719D8C55B009B7C3E /* soraCoreDataGenerator.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				7238DBD819D8C55B009B7C3E /* soraCoreDataGenerator.xcdatamodel */,
+			);
+			currentVersion = 7238DBD819D8C55B009B7C3E /* soraCoreDataGenerator.xcdatamodel */;
+			path = soraCoreDataGenerator.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 7238DBC519D8C55A009B7C3E /* Project object */;
+}
