@@ -13,6 +13,9 @@
 		7238DBDB19D8C55B009B7C3E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7238DBDA19D8C55B009B7C3E /* Images.xcassets */; };
 		7238DBDE19D8C55B009B7C3E /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7238DBDC19D8C55B009B7C3E /* MainMenu.xib */; };
 		7238DBEA19D8C55B009B7C3E /* soraCoreDataGeneratorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7238DBE919D8C55B009B7C3E /* soraCoreDataGeneratorTests.m */; };
+		7238DBF619D8C899009B7C3E /* CHCSVParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7238DBF519D8C899009B7C3E /* CHCSVParser.m */; };
+		7238DBFC19D8C983009B7C3E /* Processing.m in Sources */ = {isa = PBXBuildFile; fileRef = 7238DBFB19D8C983009B7C3E /* Processing.m */; };
+		7238DBFF19D91E70009B7C3E /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = 7238DBFE19D91E70009B7C3E /* Book.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +40,12 @@
 		7238DBE319D8C55B009B7C3E /* soraCoreDataGeneratorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = soraCoreDataGeneratorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7238DBE819D8C55B009B7C3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7238DBE919D8C55B009B7C3E /* soraCoreDataGeneratorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = soraCoreDataGeneratorTests.m; sourceTree = "<group>"; };
+		7238DBF419D8C899009B7C3E /* CHCSVParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHCSVParser.h; sourceTree = "<group>"; };
+		7238DBF519D8C899009B7C3E /* CHCSVParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHCSVParser.m; sourceTree = "<group>"; };
+		7238DBFA19D8C983009B7C3E /* Processing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Processing.h; sourceTree = "<group>"; };
+		7238DBFB19D8C983009B7C3E /* Processing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Processing.m; sourceTree = "<group>"; };
+		7238DBFD19D91E70009B7C3E /* Book.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Book.h; sourceTree = "<group>"; };
+		7238DBFE19D91E70009B7C3E /* Book.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Book.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,8 +87,13 @@
 		7238DBCF19D8C55A009B7C3E /* soraCoreDataGenerator */ = {
 			isa = PBXGroup;
 			children = (
+				7238DBF319D8C88A009B7C3E /* CSV */,
 				7238DBD419D8C55A009B7C3E /* AppDelegate.h */,
 				7238DBD519D8C55A009B7C3E /* AppDelegate.m */,
+				7238DBFA19D8C983009B7C3E /* Processing.h */,
+				7238DBFB19D8C983009B7C3E /* Processing.m */,
+				7238DBFD19D91E70009B7C3E /* Book.h */,
+				7238DBFE19D91E70009B7C3E /* Book.m */,
 				7238DBDA19D8C55B009B7C3E /* Images.xcassets */,
 				7238DBDC19D8C55B009B7C3E /* MainMenu.xib */,
 				7238DBD719D8C55B009B7C3E /* soraCoreDataGenerator.xcdatamodeld */,
@@ -112,6 +126,15 @@
 				7238DBE819D8C55B009B7C3E /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7238DBF319D8C88A009B7C3E /* CSV */ = {
+			isa = PBXGroup;
+			children = (
+				7238DBF419D8C899009B7C3E /* CHCSVParser.h */,
+				7238DBF519D8C899009B7C3E /* CHCSVParser.m */,
+			);
+			name = CSV;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,8 +236,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7238DBFC19D8C983009B7C3E /* Processing.m in Sources */,
+				7238DBF619D8C899009B7C3E /* CHCSVParser.m in Sources */,
 				7238DBD919D8C55B009B7C3E /* soraCoreDataGenerator.xcdatamodeld in Sources */,
 				7238DBD619D8C55A009B7C3E /* AppDelegate.m in Sources */,
+				7238DBFF19D91E70009B7C3E /* Book.m in Sources */,
 				7238DBD319D8C55A009B7C3E /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

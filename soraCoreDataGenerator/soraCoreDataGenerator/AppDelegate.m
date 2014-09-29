@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "Processing.h"
 
 @interface AppDelegate ()
 
@@ -18,7 +19,9 @@
 @implementation AppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-    // Insert code here to initialize your application
+    NSString *filePath = @"/Users/kiyoshinagahama/Desktop/list_person_all_extended_utf8.csv";
+    Processing *processing = [[Processing alloc] initWithFilepath:filePath managedObjectContext:[self managedObjectContext]];
+    [processing startProcess];
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
