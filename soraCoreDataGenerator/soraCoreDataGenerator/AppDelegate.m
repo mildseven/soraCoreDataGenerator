@@ -19,8 +19,8 @@
 @implementation AppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-    NSString *filePath = @"/Users/kiyoshinagahama/Desktop/list_person_all_extended_utf8.csv";
-    Processing *processing = [[Processing alloc] initWithFilepath:filePath managedObjectContext:[self managedObjectContext]];
+    NSString *filePath = @"/Users/kiyoshi/Desktop/list_person_all_extended_utf8.csv";
+    Processing *processing = [[Processing alloc] initWithFilepath:filePath persistentStoreCoordinator:[self persistentStoreCoordinator]];
     [processing startProcess];
 }
 

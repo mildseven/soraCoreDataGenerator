@@ -10,18 +10,30 @@
 #import "AppDelegate.h"
 #import "Book.h"
 
+@interface Processing()
+
+@property(nonatomic, strong) CHCSVParser *p;
+@property(nonatomic, strong) NSMutableArray *lines;
+@property(nonatomic, strong) NSMutableArray *currentLine;
+@property(nonatomic, strong) NSMutableArray *bookIDStoreArray;
+@property int totalBookNumber;
+
+@end
+
 @implementation Processing
 
-- (id)initWithFilepath:(NSString *)filepath managedObjectContext:(NSManagedObjectContext *)moc
+- (id)initWithFilepath:(NSString *)filepath persistentStoreCoordinator:(NSPersistentStoreCoordinator *)persistentStoreCoordinator
 {
     self = [super init];
     if (self) {
-        _moc = moc;
+        _moc = [[NSManagedObjectContext alloc] init];
+        [_moc setPersistentStoreCoordinator:persistentStoreCoordinator];
         NSStringEncoding encoding = 0;
         NSInputStream *stream = [NSInputStream inputStreamWithFileAtPath:filepath];
         _p = [[CHCSVParser alloc] initWithInputStream:stream usedEncoding:&encoding delimiter:','];
         _p.sanitizesFields = YES;
         _p.delegate = self;
+        _totalBookNumber = 0;
     }
     return self;
 }
@@ -43,36 +55,72 @@
 - (void)parser:(CHCSVParser *)parser didReadField:(NSString *)field atIndex:(NSInteger)fieldIndex
 {
     [_currentLine addObject:field];
+    //NSLog(@"%@", field);
     
 }
 - (void)parser:(CHCSVParser *)parser didEndLine:(NSUInteger)recordNumber
 {
-    NSEntityDescription *bookEntity = [NSEntityDescription insertNewObjectForEntityForName:@"Book" inManagedObjectContext:_moc];
-    
-    Book *newBook = [[Book alloc] initWithEntity:bookEntity insertIntoManagedObjectContext:_moc];
-    
     NSNumberFormatter *bookIDNumberFormatter = [[NSNumberFormatter alloc] init];
     NSNumber *bookIDNumber = [bookIDNumberFormatter numberFromString:[_currentLine objectAtIndex:0]];
     
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
-    //NSDate *dateFromString = [[NSDate alloc] init];
-    //dateFromString = [dateFormatter dateFromString:[_currentLine objectAtIndex:11]];
+    // Look for Book object with same bookID
+    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Book"
+                                                         inManagedObjectContext:_moc];
     
-    [newBook setBookID:bookIDNumber];
-    [newBook setTitle:[_currentLine objectAtIndex:1]];
-    //[newBook setYomi:[_currentLine objectAtIndex:2]];
-    //[newBook setYomiSort:[_currentLine objectAtIndex:3]];
-    [newBook setSubTitle:[_currentLine objectAtIndex:4]];
-    //[newBook setSubTitleYomi:[_currentLine objectAtIndex:5]];
-    //[newBook setCopyright:[_currentLine objectAtIndex:6]];
-    [newBook setCreatedDate:[NSDate date]];//[dateFormatter dateFromString:[_currentLine objectAtIndex:11]]];
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setEntity:entityDescription];
     
-    NSLog(@"Book ID ... %@, Title ... %@, 公開日 ... %@", bookIDNumber, [_currentLine objectAtIndex:1], [_currentLine objectAtIndex:11]);
-    //[_lines addObject:_currentLine];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"self.bookID == %@", bookIDNumber];
+    
+    [request setPredicate:predicate];
+    
+    NSError *error;
+    NSArray *array = [_moc executeFetchRequest:request error:&error];
+    
+    if (array.count == 0) {
+        Book *newBook  = [NSEntityDescription insertNewObjectForEntityForName:@"Book" inManagedObjectContext:_moc];
+        
+        [newBook setBookID:bookIDNumber];
+        [newBook setTitle:[_currentLine objectAtIndex:1]];
+        [newBook setYomi:[_currentLine objectAtIndex:2]];
+        [newBook setYomiSort:[_currentLine objectAtIndex:3]];
+        [newBook setSubTitle:[_currentLine objectAtIndex:4]];
+        [newBook setSubTitleYomi:[_currentLine objectAtIndex:5]];
+        
+        BOOL copyrightBool = NO;
+        if ([[_currentLine objectAtIndex:10] isEqualTo:@"なし"]) {
+            copyrightBool = YES;
+        }
+        
+        NSNumber *copyrightBoolNum = [NSNumber numberWithBool:copyrightBool];
+        [newBook setCopyright:copyrightBoolNum];
+        
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+        
+        NSDate *createdDate = [[NSDate alloc] init];
+        createdDate = [dateFormatter dateFromString:[_currentLine objectAtIndex:11]];
+        [newBook setCreatedDate:createdDate];
+        
+        NSDate *modifiedDate = [[NSDate alloc] init];
+        modifiedDate = [dateFormatter dateFromString:[_currentLine objectAtIndex:12]];
+        [newBook setModifiedDate:modifiedDate];
+        
+        _totalBookNumber++;
+    } else {
+        NSLog(@"There is book object with same book ID ... %i", [bookIDNumber intValue]);
+    }
+    
+    
     _currentLine = nil;
 }
 - (void)parserDidEndDocument:(CHCSVParser *)parser {
-    //	NSLog(@"parser ended: %@", csvFile);
+    
+    NSLog(@"Total Book Number is %i", _totalBookNumber);
+    
+    NSError *error;
+    if (![_moc save:&error]) {
+        NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+    }
 }
 @end

@@ -11,13 +11,9 @@
 
 @interface Processing : NSObject <CHCSVParserDelegate>
 
-@property(nonatomic, strong) CHCSVParser *p;
-@property(nonatomic, strong) NSMutableArray *lines;
-@property(nonatomic, strong) NSMutableArray *currentLine;
-
 @property(nonatomic, strong) NSManagedObjectContext *moc;
 
-- (id)initWithFilepath:(NSString *)filepath managedObjectContext:(NSManagedObjectContext *)moc;
+- (id)initWithFilepath:(NSString *)filepath persistentStoreCoordinator:(NSPersistentStoreCoordinator *)persistentStoreCoordinator;
 
 - (void)startProcess;
 
