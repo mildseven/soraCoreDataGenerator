@@ -12,6 +12,7 @@
     </entity>
     <entity name="Book" representedClassName="Book" syncable="YES">
         <attribute name="bookID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="characterKind" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="copyright" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="createdDate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="modifiedDate" optional="YES" attributeType="Date" syncable="YES"/>
@@ -23,14 +24,12 @@
         <relationship name="bookToAuthors" optional="YES" toMany="YES" deletionRule="Deny" destinationEntity="BookToAuthors" syncable="YES"/>
     </entity>
     <entity name="BookToAuthors" representedClassName="BookToAuthors" syncable="YES">
-        <attribute name="authorID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
-        <attribute name="bookID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="role" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="author" optional="YES" maxCount="1" deletionRule="Deny" destinationEntity="Author" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Book" positionX="-7560" positionY="3078" width="128" height="193"/>
         <element name="Author" positionX="-7191" positionY="3122" width="128" height="163"/>
-        <element name="BookToAuthors" positionX="-7371" positionY="3078" width="128" height="103"/>
+        <element name="Book" positionX="-7560" positionY="3078" width="128" height="208"/>
+        <element name="BookToAuthors" positionX="-7371" positionY="3078" width="128" height="73"/>
     </elements>
 </model>

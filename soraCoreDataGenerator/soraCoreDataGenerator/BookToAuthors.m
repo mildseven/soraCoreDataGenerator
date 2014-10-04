@@ -13,8 +13,6 @@
 @implementation BookToAuthors
 
 @dynamic role;
-@dynamic authorID;
-@dynamic bookID;
 @dynamic author;
 
 @end

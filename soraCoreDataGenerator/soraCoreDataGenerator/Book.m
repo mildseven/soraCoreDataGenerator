@@ -21,6 +21,7 @@
 @dynamic title;
 @dynamic yomi;
 @dynamic yomiSort;
+@dynamic characterKind;
 @dynamic bookToAuthors;
 
 @end

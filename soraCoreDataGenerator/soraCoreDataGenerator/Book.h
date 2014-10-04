@@ -22,6 +22,7 @@
 @property (nonatomic, retain) NSString * title;
 @property (nonatomic, retain) NSString * yomi;
 @property (nonatomic, retain) NSString * yomiSort;
+@property (nonatomic, retain) NSString * characterKind;
 @property (nonatomic, retain) NSSet *bookToAuthors;
 @end
 

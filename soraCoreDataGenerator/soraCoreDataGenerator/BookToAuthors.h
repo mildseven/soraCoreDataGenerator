@@ -13,9 +13,7 @@
 
 @interface BookToAuthors : NSManagedObject
 
-@property (nonatomic, retain) NSString * role;
-@property (nonatomic, retain) NSNumber * authorID;
-@property (nonatomic, retain) NSNumber * bookID;
+@property (nonatomic, retain) NSString *role;
 @property (nonatomic, retain) Author *author;
 
 @end

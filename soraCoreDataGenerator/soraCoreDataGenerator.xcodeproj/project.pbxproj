@@ -7,9 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		416BAAD319DDBA5100A6E1F8 /* AuthorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 416BAAD219DDBA5100A6E1F8 /* AuthorModel.m */; };
 		417E3E2E19DA107200C3ADF6 /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = 417E3E2D19DA107200C3ADF6 /* Book.m */; };
 		417E3E3119DA107200C3ADF6 /* Author.m in Sources */ = {isa = PBXBuildFile; fileRef = 417E3E3019DA107200C3ADF6 /* Author.m */; };
 		417E3E3419DA107200C3ADF6 /* BookToAuthors.m in Sources */ = {isa = PBXBuildFile; fileRef = 417E3E3319DA107200C3ADF6 /* BookToAuthors.m */; };
+		41A43DB519DF426B00390CD1 /* BookListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41A43DB219DF426B00390CD1 /* BookListViewController.xib */; };
+		41A43DB619DF426B00390CD1 /* BookListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A43DB419DF426B00390CD1 /* BookListViewController.m */; };
+		41A43DBA19DF42EE00390CD1 /* AuthorListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A43DB819DF42EE00390CD1 /* AuthorListViewController.m */; };
+		41A43DBB19DF42EE00390CD1 /* AuthorListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41A43DB919DF42EE00390CD1 /* AuthorListViewController.xib */; };
+		41A43DBE19DF487400390CD1 /* BookModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A43DBD19DF487400390CD1 /* BookModel.m */; };
 		7238DBD319D8C55A009B7C3E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7238DBD219D8C55A009B7C3E /* main.m */; };
 		7238DBD619D8C55A009B7C3E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7238DBD519D8C55A009B7C3E /* AppDelegate.m */; };
 		7238DBD919D8C55B009B7C3E /* soraCoreDataGenerator.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7238DBD719D8C55B009B7C3E /* soraCoreDataGenerator.xcdatamodeld */; };
@@ -31,12 +37,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		416BAAD119DDBA5100A6E1F8 /* AuthorModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthorModel.h; sourceTree = "<group>"; };
+		416BAAD219DDBA5100A6E1F8 /* AuthorModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthorModel.m; sourceTree = "<group>"; };
 		417E3E2C19DA107200C3ADF6 /* Book.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Book.h; path = soraCoreDataGenerator/Book.h; sourceTree = "<group>"; };
 		417E3E2D19DA107200C3ADF6 /* Book.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Book.m; path = soraCoreDataGenerator/Book.m; sourceTree = "<group>"; };
 		417E3E2F19DA107200C3ADF6 /* Author.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Author.h; path = soraCoreDataGenerator/Author.h; sourceTree = "<group>"; };
 		417E3E3019DA107200C3ADF6 /* Author.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Author.m; path = soraCoreDataGenerator/Author.m; sourceTree = "<group>"; };
 		417E3E3219DA107200C3ADF6 /* BookToAuthors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BookToAuthors.h; path = soraCoreDataGenerator/BookToAuthors.h; sourceTree = "<group>"; };
 		417E3E3319DA107200C3ADF6 /* BookToAuthors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BookToAuthors.m; path = soraCoreDataGenerator/BookToAuthors.m; sourceTree = "<group>"; };
+		41A43DB219DF426B00390CD1 /* BookListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookListViewController.xib; sourceTree = "<group>"; };
+		41A43DB319DF426B00390CD1 /* BookListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookListViewController.h; sourceTree = "<group>"; };
+		41A43DB419DF426B00390CD1 /* BookListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookListViewController.m; sourceTree = "<group>"; };
+		41A43DB719DF42EE00390CD1 /* AuthorListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthorListViewController.h; sourceTree = "<group>"; };
+		41A43DB819DF42EE00390CD1 /* AuthorListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthorListViewController.m; sourceTree = "<group>"; };
+		41A43DB919DF42EE00390CD1 /* AuthorListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AuthorListViewController.xib; sourceTree = "<group>"; };
+		41A43DBC19DF487400390CD1 /* BookModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookModel.h; sourceTree = "<group>"; };
+		41A43DBD19DF487400390CD1 /* BookModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookModel.m; sourceTree = "<group>"; };
 		7238DBCD19D8C55A009B7C3E /* soraCoreDataGenerator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = soraCoreDataGenerator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7238DBD119D8C55A009B7C3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7238DBD219D8C55A009B7C3E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -72,7 +88,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7238DBC419D8C55A009B7C3E = {
+		4173A4FC19DF09AA00B605DC /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
 				417E3E3219DA107200C3ADF6 /* BookToAuthors.h */,
@@ -81,6 +97,34 @@
 				417E3E3019DA107200C3ADF6 /* Author.m */,
 				417E3E2C19DA107200C3ADF6 /* Book.h */,
 				417E3E2D19DA107200C3ADF6 /* Book.m */,
+			);
+			name = "Core Data";
+			sourceTree = "<group>";
+		};
+		41A43D9719DF3B6200390CD1 /* BookViewController */ = {
+			isa = PBXGroup;
+			children = (
+				41A43DB319DF426B00390CD1 /* BookListViewController.h */,
+				41A43DB419DF426B00390CD1 /* BookListViewController.m */,
+				41A43DB219DF426B00390CD1 /* BookListViewController.xib */,
+			);
+			name = BookViewController;
+			sourceTree = "<group>";
+		};
+		41A43DAC19DF3F0300390CD1 /* AuthorViewController */ = {
+			isa = PBXGroup;
+			children = (
+				41A43DB719DF42EE00390CD1 /* AuthorListViewController.h */,
+				41A43DB819DF42EE00390CD1 /* AuthorListViewController.m */,
+				41A43DB919DF42EE00390CD1 /* AuthorListViewController.xib */,
+			);
+			name = AuthorViewController;
+			sourceTree = "<group>";
+		};
+		7238DBC419D8C55A009B7C3E = {
+			isa = PBXGroup;
+			children = (
+				4173A4FC19DF09AA00B605DC /* Core Data */,
 				7238DBCF19D8C55A009B7C3E /* soraCoreDataGenerator */,
 				7238DBE619D8C55B009B7C3E /* soraCoreDataGeneratorTests */,
 				7238DBCE19D8C55A009B7C3E /* Products */,
@@ -106,6 +150,12 @@
 				7238DBFB19D8C983009B7C3E /* Processing.m */,
 				7238DBDA19D8C55B009B7C3E /* Images.xcassets */,
 				7238DBDC19D8C55B009B7C3E /* MainMenu.xib */,
+				41A43D9719DF3B6200390CD1 /* BookViewController */,
+				41A43DAC19DF3F0300390CD1 /* AuthorViewController */,
+				416BAAD119DDBA5100A6E1F8 /* AuthorModel.h */,
+				416BAAD219DDBA5100A6E1F8 /* AuthorModel.m */,
+				41A43DBC19DF487400390CD1 /* BookModel.h */,
+				41A43DBD19DF487400390CD1 /* BookModel.m */,
 				7238DBD719D8C55B009B7C3E /* soraCoreDataGenerator.xcdatamodeld */,
 				7238DBD019D8C55A009B7C3E /* Supporting Files */,
 			);
@@ -229,6 +279,8 @@
 			files = (
 				7238DBDB19D8C55B009B7C3E /* Images.xcassets in Resources */,
 				7238DBDE19D8C55B009B7C3E /* MainMenu.xib in Resources */,
+				41A43DB519DF426B00390CD1 /* BookListViewController.xib in Resources */,
+				41A43DBB19DF42EE00390CD1 /* AuthorListViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,9 +300,13 @@
 			files = (
 				7238DBFC19D8C983009B7C3E /* Processing.m in Sources */,
 				7238DBF619D8C899009B7C3E /* CHCSVParser.m in Sources */,
+				41A43DBE19DF487400390CD1 /* BookModel.m in Sources */,
 				417E3E3119DA107200C3ADF6 /* Author.m in Sources */,
+				41A43DBA19DF42EE00390CD1 /* AuthorListViewController.m in Sources */,
+				41A43DB619DF426B00390CD1 /* BookListViewController.m in Sources */,
 				7238DBD919D8C55B009B7C3E /* soraCoreDataGenerator.xcdatamodeld in Sources */,
 				7238DBD619D8C55A009B7C3E /* AppDelegate.m in Sources */,
+				416BAAD319DDBA5100A6E1F8 /* AuthorModel.m in Sources */,
 				417E3E2E19DA107200C3ADF6 /* Book.m in Sources */,
 				417E3E3419DA107200C3ADF6 /* BookToAuthors.m in Sources */,
 				7238DBD319D8C55A009B7C3E /* main.m in Sources */,
@@ -321,7 +377,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -357,7 +413,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 			};
@@ -402,6 +458,7 @@
 				);
 				INFOPLIST_FILE = soraCoreDataGeneratorTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/soraCoreDataGenerator.app/Contents/MacOS/soraCoreDataGenerator";
 			};
@@ -418,6 +475,7 @@
 				);
 				INFOPLIST_FILE = soraCoreDataGeneratorTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/soraCoreDataGenerator.app/Contents/MacOS/soraCoreDataGenerator";
 			};

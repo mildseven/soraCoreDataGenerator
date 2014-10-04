@@ -7,8 +7,9 @@
 //
 
 #import "Processing.h"
-#import "AppDelegate.h"
 #import "Book.h"
+#import "BookToAuthors.h"
+#import "Author.h"
 
 @interface Processing()
 
@@ -17,6 +18,7 @@
 @property(nonatomic, strong) NSMutableArray *currentLine;
 @property(nonatomic, strong) NSMutableArray *bookIDStoreArray;
 @property int totalBookNumber;
+@property int totalAuthorNumber;
 
 @end
 
@@ -34,6 +36,7 @@
         _p.sanitizesFields = YES;
         _p.delegate = self;
         _totalBookNumber = 0;
+        _totalAuthorNumber = 0;
     }
     return self;
 }
@@ -55,68 +58,109 @@
 - (void)parser:(CHCSVParser *)parser didReadField:(NSString *)field atIndex:(NSInteger)fieldIndex
 {
     [_currentLine addObject:field];
-    //NSLog(@"%@", field);
     
 }
 - (void)parser:(CHCSVParser *)parser didEndLine:(NSUInteger)recordNumber
 {
-    NSNumberFormatter *bookIDNumberFormatter = [[NSNumberFormatter alloc] init];
-    NSNumber *bookIDNumber = [bookIDNumberFormatter numberFromString:[_currentLine objectAtIndex:0]];
-    
-    // Look for Book object with same bookID
-    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Book"
-                                                         inManagedObjectContext:_moc];
-    
-    NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    [request setEntity:entityDescription];
-    
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"self.bookID == %@", bookIDNumber];
-    
-    [request setPredicate:predicate];
-    
-    NSError *error;
-    NSArray *array = [_moc executeFetchRequest:request error:&error];
-    
-    if (array.count == 0) {
-        Book *newBook  = [NSEntityDescription insertNewObjectForEntityForName:@"Book" inManagedObjectContext:_moc];
+    if (![[_currentLine objectAtIndex:0] isEqualToString:@"作品ID"]) {
+        NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
+        NSNumber *bookIDNumber = [numberFormatter numberFromString:[_currentLine objectAtIndex:0]];
+        NSNumber *authorIDNumber = [numberFormatter numberFromString:[_currentLine objectAtIndex:14]];
         
-        [newBook setBookID:bookIDNumber];
-        [newBook setTitle:[_currentLine objectAtIndex:1]];
-        [newBook setYomi:[_currentLine objectAtIndex:2]];
-        [newBook setYomiSort:[_currentLine objectAtIndex:3]];
-        [newBook setSubTitle:[_currentLine objectAtIndex:4]];
-        [newBook setSubTitleYomi:[_currentLine objectAtIndex:5]];
+        // Look for Book object with same bookID
+        NSEntityDescription *bookEntityDescription = [NSEntityDescription entityForName:@"Book"
+                                                                 inManagedObjectContext:_moc];
         
-        BOOL copyrightBool = NO;
-        if ([[_currentLine objectAtIndex:10] isEqualTo:@"なし"]) {
-            copyrightBool = YES;
+        NSFetchRequest *bookRequest = [[NSFetchRequest alloc] init];
+        [bookRequest setEntity:bookEntityDescription];
+        
+        NSPredicate *bookPredicate = [NSPredicate predicateWithFormat:@"self.bookID == %@", bookIDNumber];
+        
+        [bookRequest setPredicate:bookPredicate];
+        
+        NSError *error;
+        NSArray *bookArray = [_moc executeFetchRequest:bookRequest error:&error];
+        
+        Book *book = nil;
+        
+        if (bookArray.count == 0) {
+            book  = [NSEntityDescription insertNewObjectForEntityForName:@"Book" inManagedObjectContext:_moc];
+            
+            book.bookID = bookIDNumber;
+            book.title = [_currentLine objectAtIndex:1];
+            book.yomi = [_currentLine objectAtIndex:2];
+            book.yomiSort = [_currentLine objectAtIndex:3];
+            book.subTitle = [_currentLine objectAtIndex:4];
+            book.subTitleYomi = [_currentLine objectAtIndex:5];
+            book.characterKind = [_currentLine objectAtIndex:9];
+            
+            BOOL copyrightBool = NO;
+            if ([[_currentLine objectAtIndex:10] isEqualTo:@"なし"]) {
+                copyrightBool = YES;
+            }
+            
+            NSNumber *copyrightBoolNum = [NSNumber numberWithBool:copyrightBool];
+            [book setCopyright:copyrightBoolNum];
+            
+            NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+            [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+            book.createdDate = [dateFormatter dateFromString:[_currentLine objectAtIndex:11]];
+            book.modifiedDate = [dateFormatter dateFromString:[_currentLine objectAtIndex:12]];
+            
+            _totalBookNumber++;
+            
+        } else {
+            NSLog(@"There is book object with same book ID ... %i", [bookIDNumber intValue]);
+            book = [bookArray objectAtIndex:0];
         }
         
-        NSNumber *copyrightBoolNum = [NSNumber numberWithBool:copyrightBool];
-        [newBook setCopyright:copyrightBoolNum];
+        BookToAuthors *bookToAuthors = [NSEntityDescription insertNewObjectForEntityForName:@"BookToAuthors" inManagedObjectContext:_moc];
+        bookToAuthors.role = [_currentLine objectAtIndex:23];
         
-        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-        [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+        [book addBookToAuthorsObject:bookToAuthors];
         
-        NSDate *createdDate = [[NSDate alloc] init];
-        createdDate = [dateFormatter dateFromString:[_currentLine objectAtIndex:11]];
-        [newBook setCreatedDate:createdDate];
+        // Look for Author object with same authorID
+        NSEntityDescription *authorEntityDescription = [NSEntityDescription entityForName:@"Author"
+                                                                   inManagedObjectContext:_moc];
         
-        NSDate *modifiedDate = [[NSDate alloc] init];
-        modifiedDate = [dateFormatter dateFromString:[_currentLine objectAtIndex:12]];
-        [newBook setModifiedDate:modifiedDate];
+        NSFetchRequest *authorRequest = [[NSFetchRequest alloc] init];
+        [authorRequest setEntity:authorEntityDescription];
         
-        _totalBookNumber++;
-    } else {
-        NSLog(@"There is book object with same book ID ... %i", [bookIDNumber intValue]);
+        NSPredicate *authorPredicate = [NSPredicate predicateWithFormat:@"self.authorID == %@", authorIDNumber];
+        
+        [authorRequest setPredicate:authorPredicate];
+        
+        //NSError *error;
+        NSArray *authorArray = [_moc executeFetchRequest:authorRequest error:&error];
+        
+        Author *author = nil;
+        
+        if(authorArray.count == 0) {
+            author  = [NSEntityDescription insertNewObjectForEntityForName:@"Author" inManagedObjectContext:_moc];
+            
+            author.authorID = authorIDNumber;
+            author.lastName = [_currentLine objectAtIndex:15];
+            author.firstName = [_currentLine objectAtIndex:16];
+            author.lastNameYomi = [_currentLine objectAtIndex:17];
+            author.firstNameYomi = [_currentLine objectAtIndex:18];
+            author.firstNameYomiSort = [_currentLine objectAtIndex:19];
+            author.lastNameYomiSort = [_currentLine objectAtIndex:20];
+            
+            _totalAuthorNumber++;
+            
+        } else {
+            author = [authorArray objectAtIndex:0];
+        }
+        
+        [author addBooksObject:book];
+        bookToAuthors.author = author;
+        
+        _currentLine = nil;
     }
-    
-    
-    _currentLine = nil;
 }
 - (void)parserDidEndDocument:(CHCSVParser *)parser {
     
-    NSLog(@"Total Book Number is %i", _totalBookNumber);
+    NSLog(@"Total Book Number is %i, Total Author Number is %i", _totalBookNumber, _totalAuthorNumber);
     
     NSError *error;
     if (![_moc save:&error]) {

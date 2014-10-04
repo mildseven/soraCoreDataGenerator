@@ -8,20 +8,43 @@
 
 #import "AppDelegate.h"
 #import "Processing.h"
+#import "Book.h"
+#import "BookListViewController.h"
+#import "AuthorListViewController.h"
 
 @interface AppDelegate ()
 
 @property (weak) IBOutlet NSWindow *window;
-- (IBAction)saveAction:(id)sender;
+@property (weak) IBOutlet BookListViewController *bookListViewController;
+@property (weak) IBOutlet AuthorListViewController *authorListViewController;
+@property (weak) IBOutlet NSTabView *tabView;
 
+- (IBAction)saveAction:(id)sender;
 @end
 
 @implementation AppDelegate
 
+- (void)awakeFromNib
+{
+    [[_tabView.tabViewItems objectAtIndex:0] setView:_bookListViewController.view];
+    [[_tabView.tabViewItems objectAtIndex:1] setView:_authorListViewController.view];
+}
+
+- (void)applicationDidBecomeActive:(NSNotification *)aNotification {
+    NSLog(@"Active");
+}
+
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-    NSString *filePath = @"/Users/kiyoshi/Desktop/list_person_all_extended_utf8.csv";
-    Processing *processing = [[Processing alloc] initWithFilepath:filePath persistentStoreCoordinator:[self persistentStoreCoordinator]];
-    [processing startProcess];
+    
+    NSURL *applicationDocumentsDirectory = [self applicationDocumentsDirectory];
+    NSURL *url = [applicationDocumentsDirectory URLByAppendingPathComponent:@"OSXCoreDataObjC.storedata"];
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    
+    if (![fileManager fileExistsAtPath:[url path]]) {
+        NSString *filePath = @"/Users/kiyoshi/Desktop/list_person_all_extended_utf8.csv";
+        Processing *processing = [[Processing alloc] initWithFilepath:filePath persistentStoreCoordinator:[self persistentStoreCoordinator]];
+        [processing startProcess];
+    }
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
