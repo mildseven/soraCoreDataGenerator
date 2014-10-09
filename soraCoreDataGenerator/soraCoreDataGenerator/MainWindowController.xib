@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6245"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="MainWindowController">
+            <connections>
+                <outlet property="authorListViewController" destination="Q15-p6-14x" id="cKQ-55-hJ1"/>
+                <outlet property="bookListViewController" destination="fAg-G5-lxh" id="bkE-0x-ZX8"/>
+                <outlet property="tabView" destination="vqp-ca-i7v" id="EAE-va-iFP"/>
+                <outlet property="window" destination="108-U3-isj" id="KBC-ZE-EE8"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <window title="青空文庫データベース" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="108-U3-isj">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="335" y="390" width="674" height="812"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1418"/>
+            <view key="contentView" id="m0x-5U-sgi">
+                <rect key="frame" x="0.0" y="1" width="674" height="812"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <tabView translatesAutoresizingMaskIntoConstraints="NO" id="vqp-ca-i7v">
+                        <rect key="frame" x="13" y="10" width="648" height="796"/>
+                        <font key="font" metaFont="system"/>
+                        <tabViewItems>
+                            <tabViewItem label="Tab" identifier="1" id="FrS-HI-0Zv">
+                                <view key="view" id="Tk2-kr-zJp">
+                                    <rect key="frame" x="10" y="33" width="628" height="750"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                            </tabViewItem>
+                            <tabViewItem label="View" identifier="2" id="anv-7E-or5">
+                                <view key="view" id="EsV-OR-ULi">
+                                    <rect key="frame" x="10" y="33" width="628" height="750"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                            </tabViewItem>
+                        </tabViewItems>
+                    </tabView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="vqp-ca-i7v" secondAttribute="trailing" constant="20" id="DlS-b3-WSt"/>
+                    <constraint firstAttribute="bottom" secondItem="vqp-ca-i7v" secondAttribute="bottom" constant="20" id="GZa-QD-YpY"/>
+                    <constraint firstItem="vqp-ca-i7v" firstAttribute="top" secondItem="m0x-5U-sgi" secondAttribute="top" constant="12" id="IuQ-eV-Gh9"/>
+                    <constraint firstItem="vqp-ca-i7v" firstAttribute="leading" secondItem="m0x-5U-sgi" secondAttribute="leading" constant="20" id="JN1-tO-Kkp"/>
+                </constraints>
+            </view>
+            <point key="canvasLocation" x="236" y="394"/>
+        </window>
+        <viewController nibName="BookListViewController" id="fAg-G5-lxh" customClass="BookListViewController"/>
+        <viewController nibName="AuthorListViewController" id="Q15-p6-14x" customClass="AuthorListViewController"/>
+    </objects>
+</document>

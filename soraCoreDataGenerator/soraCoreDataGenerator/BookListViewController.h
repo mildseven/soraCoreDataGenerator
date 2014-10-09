@@ -10,4 +10,8 @@
 
 @interface BookListViewController : NSViewController<NSTableViewDelegate, NSTableViewDataSource>
 
+@property (weak) IBOutlet NSArrayController *bookArrayController;
+@property (weak) IBOutlet NSArrayController *authorArrayController;
+@property (weak) IBOutlet NSTableView *bookTableView;
+
 @end

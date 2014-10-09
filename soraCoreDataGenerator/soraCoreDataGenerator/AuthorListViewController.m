@@ -13,8 +13,6 @@
 
 @interface AuthorListViewController ()
 
-@property (weak) IBOutlet NSArrayController *authorArrayController;
-@property (weak) IBOutlet NSArrayController *bookArrayController;
 @property (weak) IBOutlet NSTableView *authorTableView;
 @property (weak) IBOutlet NSTableView *bookTableView;
 

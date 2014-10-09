@@ -12,9 +12,7 @@
 
 @interface BookModel : NSObject
 
-@property(nonatomic, strong) NSNumber *bookID;
-@property(nonatomic, strong) NSString *title;
-@property(nonatomic, strong) NSString *subTitle;
+@property(nonatomic, strong) NSString *role;
 
 - (instancetype)initWithBook:(Book*)book;
 

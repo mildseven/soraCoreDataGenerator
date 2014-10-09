@@ -11,27 +11,51 @@
 #import "Book.h"
 #import "BookListViewController.h"
 #import "AuthorListViewController.h"
+#import "MainWindowController.h"
 
 @interface AppDelegate ()
 
-@property (weak) IBOutlet NSWindow *window;
-@property (weak) IBOutlet BookListViewController *bookListViewController;
-@property (weak) IBOutlet AuthorListViewController *authorListViewController;
-@property (weak) IBOutlet NSTabView *tabView;
+@property (strong) MainWindowController *mainWindowController;
+@property (weak) IBOutlet NSMenuItem *updateMenuItem;
 
+- (IBAction)updateDatabase:(id)sender;
 - (IBAction)saveAction:(id)sender;
+
 @end
 
 @implementation AppDelegate
 
-- (void)awakeFromNib
+- (IBAction)updateDatabase:(id)sender
 {
-    [[_tabView.tabViewItems objectAtIndex:0] setView:_bookListViewController.view];
-    [[_tabView.tabViewItems objectAtIndex:1] setView:_authorListViewController.view];
+    NSEntityDescription *entityDescription = [NSEntityDescription
+                                              entityForName:@"Book" inManagedObjectContext:self.managedObjectContext];
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setEntity:entityDescription];
+    NSSortDescriptor * sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"createdDate" ascending:NO];
+    [request setSortDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+    [request setFetchLimit:1];
+    NSError *error;
+    NSArray *array = [self.managedObjectContext executeFetchRequest:request error:&error];
+    NSDate *latestCreatedDate = ((Book*)[array objectAtIndex:0]).createdDate;
+    
+    NSDateComponents *dayComponent = [[NSDateComponents alloc] init];
+    dayComponent.day = 1;
+    NSCalendar *theCalendar = [NSCalendar currentCalendar];
+    NSDate *nextDateOfkatesCreatedDate = [theCalendar dateByAddingComponents:dayComponent toDate:latestCreatedDate options:0];
+    
+    NSLog(@"%@", nextDateOfkatesCreatedDate);
+    
+    UpdateDatabase *updateDatabse =[[UpdateDatabase alloc] initWithDate:nextDateOfkatesCreatedDate];
+    updateDatabse.delegate = self;
+    [updateDatabse downloadItems];
 }
 
-- (void)applicationDidBecomeActive:(NSNotification *)aNotification {
-    NSLog(@"Active");
+- (void)updateDoneWithBookArray:(NSMutableArray*)bookArray authorArray:(NSMutableArray*)authorArray
+{
+    [_mainWindowController.bookListViewController.bookArrayController addObjects:bookArray];
+    [_mainWindowController.authorListViewController.authorArrayController addObjects:authorArray];
+    
+    NSLog(@"%li",[_mainWindowController.bookListViewController.bookArrayController.content count]);
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
@@ -41,10 +65,13 @@
     NSFileManager *fileManager = [NSFileManager defaultManager];
     
     if (![fileManager fileExistsAtPath:[url path]]) {
-        NSString *filePath = @"/Users/kiyoshi/Desktop/list_person_all_extended_utf8.csv";
-        Processing *processing = [[Processing alloc] initWithFilepath:filePath persistentStoreCoordinator:[self persistentStoreCoordinator]];
+        NSURL *url = [[NSBundle mainBundle] URLForResource:@"list_person_all_extended_utf8" withExtension:@"csv"];;
+        Processing *processing = [[Processing alloc] initWithFilepath:[url path] persistentStoreCoordinator:[self persistentStoreCoordinator]];
         [processing startProcess];
     }
+    
+    _mainWindowController = [[MainWindowController alloc] initWithWindowNibName:@"MainWindowController"];
+    [_mainWindowController showWindow:self];
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {

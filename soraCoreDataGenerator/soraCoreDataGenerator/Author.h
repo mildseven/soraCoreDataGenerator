@@ -21,6 +21,7 @@
 @property (nonatomic, retain) NSString * firstNameYomiSort;
 @property (nonatomic, retain) NSNumber * authorID;
 @property (nonatomic, retain) NSSet *books;
+
 @end
 
 @interface Author (CoreDataGeneratedAccessors)

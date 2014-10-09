@@ -9,6 +9,13 @@
 #import "BookModel.h"
 #import "Book.h"
 
+@interface BookModel()
+
+@property(nonatomic, strong) NSNumber *bookID;
+@property(nonatomic, strong) NSString *title;
+
+@end
+
 @implementation BookModel
 
 - (instancetype)initWithBook:(Book*)book
@@ -16,8 +23,7 @@
     self = [super init];
     if (self) {
         _bookID = book.bookID;
-        _title = book.title;
-        _subTitle = book.subTitle;
+        _title = [NSString stringWithFormat:@"%@   %@",book.title ,book.subTitle];
     }
     return self;
 }

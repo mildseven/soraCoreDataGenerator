@@ -6,29 +6,24 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
             <connections>
-                <outlet property="delegate" destination="Voe-Tx-rLC" id="GzC-gU-4Uq"/>
+                <outlet property="delegate" destination="K77-0i-YJM" id="CVa-cv-jx5"/>
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <customObject id="Voe-Tx-rLC" customClass="AppDelegate">
+        <customObject id="K77-0i-YJM" customClass="AppDelegate">
             <connections>
-                <outlet property="authorListViewController" destination="ZTB-jr-305" id="3vR-sW-GJj"/>
-                <outlet property="bookListViewController" destination="qkN-Nq-F4Y" id="BgR-vf-gdp"/>
-                <outlet property="tabView" destination="UMI-cQ-lH9" id="9ry-B5-CF0"/>
-                <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
+                <outlet property="updateMenuItem" destination="oHB-zV-byL" id="e3Q-d4-odk"/>
             </connections>
         </customObject>
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
-        <viewController nibName="BookListViewController" id="qkN-Nq-F4Y" customClass="BookListViewController"/>
-        <viewController nibName="AuthorListViewController" id="ZTB-jr-305" customClass="AuthorListViewController"/>
         <menu title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
             <items>
-                <menuItem title="soraCoreDataGenerator" id="1Xt-HY-uBw">
+                <menuItem title="青空文庫データベース" id="1Xt-HY-uBw">
                     <modifierMask key="keyEquivalentModifierMask"/>
-                    <menu key="submenu" title="soraCoreDataGenerator" systemMenu="apple" id="uQy-DD-JDr">
+                    <menu key="submenu" title="青空文庫データベース" systemMenu="apple" id="uQy-DD-JDr">
                         <items>
-                            <menuItem title="About soraCoreDataGenerator" id="5kV-Vb-QxS">
+                            <menuItem title="About 青空文庫データベース" id="5kV-Vb-QxS">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="orderFrontStandardAboutPanel:" target="-1" id="Exp-CZ-Vem"/>
@@ -36,6 +31,12 @@
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
                             <menuItem title="Preferences…" keyEquivalent="," id="BOF-NM-1cW"/>
+                            <menuItem title="Updates Database..." id="oHB-zV-byL">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="updateDatabase:" target="K77-0i-YJM" id="nqT-2y-6D0"/>
+                                </connections>
+                            </menuItem>
                             <menuItem isSeparatorItem="YES" id="wFC-TO-SCJ"/>
                             <menuItem title="Services" id="NMo-om-nkz">
                                 <modifierMask key="keyEquivalentModifierMask"/>
@@ -671,42 +672,5 @@
                 </menuItem>
             </items>
         </menu>
-        <window title="soraCoreDataGenerator" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
-            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
-            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="674" height="812"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1418"/>
-            <view key="contentView" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="1" width="674" height="812"/>
-                <autoresizingMask key="autoresizingMask"/>
-                <subviews>
-                    <tabView translatesAutoresizingMaskIntoConstraints="NO" id="UMI-cQ-lH9">
-                        <rect key="frame" x="13" y="10" width="648" height="796"/>
-                        <font key="font" metaFont="system"/>
-                        <tabViewItems>
-                            <tabViewItem label="Tab" identifier="1" id="a1R-GZ-r6X">
-                                <view key="view" id="k4R-JS-ABb">
-                                    <rect key="frame" x="10" y="33" width="628" height="750"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                </view>
-                            </tabViewItem>
-                            <tabViewItem label="View" identifier="2" id="Tdh-OM-YO8">
-                                <view key="view" id="Fr6-lw-AaE">
-                                    <rect key="frame" x="10" y="33" width="628" height="750"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                </view>
-                            </tabViewItem>
-                        </tabViewItems>
-                    </tabView>
-                </subviews>
-                <constraints>
-                    <constraint firstAttribute="bottom" secondItem="UMI-cQ-lH9" secondAttribute="bottom" constant="20" id="iNa-t6-kBi"/>
-                    <constraint firstItem="UMI-cQ-lH9" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="20" id="jhV-h3-g3O"/>
-                    <constraint firstAttribute="trailing" secondItem="UMI-cQ-lH9" secondAttribute="trailing" constant="20" id="kOx-oA-tJT"/>
-                    <constraint firstItem="UMI-cQ-lH9" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="12" id="vDF-lV-Bnh"/>
-                </constraints>
-            </view>
-            <point key="canvasLocation" x="236" y="394"/>
-        </window>
     </objects>
 </document>

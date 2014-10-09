@@ -362,16 +362,23 @@
             <point key="canvasLocation" x="-203" y="139"/>
         </customView>
         <customObject id="ejH-Sw-cIh" customClass="AppDelegate"/>
-        <arrayController mode="entity" entityName="Book" automaticallyPreparesContent="YES" id="aGU-uA-nly" userLabel="Book Array Controller">
+        <arrayController mode="entity" entityName="Book" automaticallyPreparesContent="YES" selectsInsertedObjects="NO" id="aGU-uA-nly" userLabel="Book Array Controller">
             <connections>
-                <binding destination="ejH-Sw-cIh" name="managedObjectContext" keyPath="self.managedObjectContext" id="wQu-0J-CLP"/>
+                <binding destination="ejH-Sw-cIh" name="managedObjectContext" keyPath="self.managedObjectContext" id="qwO-Zn-sep"/>
+                <binding destination="n9G-Cf-P2I" name="sortDescriptors" keyPath="values.sortDescriptor" id="oKY-kJ-9AP">
+                    <dictionary key="options">
+                        <bool key="NSValidatesImmediately" value="YES"/>
+                        <string key="NSValueTransformerName">NSUnarchiveFromData</string>
+                    </dictionary>
+                </binding>
             </connections>
         </arrayController>
-        <arrayController objectClassName="AuthorModel" id="ABw-ns-xny" userLabel="Author Array Controller">
+        <arrayController objectClassName="AuthorModel" automaticallyRearrangesObjects="YES" id="ABw-ns-xny" userLabel="Author Array Controller">
             <declaredKeys>
                 <string>name</string>
                 <string>role</string>
             </declaredKeys>
         </arrayController>
+        <userDefaultsController representsSharedInstance="YES" id="n9G-Cf-P2I"/>
     </objects>
 </document>

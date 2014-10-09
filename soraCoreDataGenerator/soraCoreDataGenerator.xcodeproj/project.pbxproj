@@ -8,9 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		416BAAD319DDBA5100A6E1F8 /* AuthorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 416BAAD219DDBA5100A6E1F8 /* AuthorModel.m */; };
+		41711A8A19E3435000239DD3 /* UpdateDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 41711A8919E3435000239DD3 /* UpdateDatabase.m */; };
 		417E3E2E19DA107200C3ADF6 /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = 417E3E2D19DA107200C3ADF6 /* Book.m */; };
 		417E3E3119DA107200C3ADF6 /* Author.m in Sources */ = {isa = PBXBuildFile; fileRef = 417E3E3019DA107200C3ADF6 /* Author.m */; };
 		417E3E3419DA107200C3ADF6 /* BookToAuthors.m in Sources */ = {isa = PBXBuildFile; fileRef = 417E3E3319DA107200C3ADF6 /* BookToAuthors.m */; };
+		4184125219E0621800F4744A /* MainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4184125019E0621800F4744A /* MainWindowController.m */; };
+		4184125319E0621800F4744A /* MainWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4184125119E0621800F4744A /* MainWindowController.xib */; };
 		41A43DB519DF426B00390CD1 /* BookListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41A43DB219DF426B00390CD1 /* BookListViewController.xib */; };
 		41A43DB619DF426B00390CD1 /* BookListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A43DB419DF426B00390CD1 /* BookListViewController.m */; };
 		41A43DBA19DF42EE00390CD1 /* AuthorListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A43DB819DF42EE00390CD1 /* AuthorListViewController.m */; };
@@ -39,12 +42,17 @@
 /* Begin PBXFileReference section */
 		416BAAD119DDBA5100A6E1F8 /* AuthorModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthorModel.h; sourceTree = "<group>"; };
 		416BAAD219DDBA5100A6E1F8 /* AuthorModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthorModel.m; sourceTree = "<group>"; };
+		41711A8819E3435000239DD3 /* UpdateDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdateDatabase.h; sourceTree = "<group>"; };
+		41711A8919E3435000239DD3 /* UpdateDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdateDatabase.m; sourceTree = "<group>"; };
 		417E3E2C19DA107200C3ADF6 /* Book.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Book.h; path = soraCoreDataGenerator/Book.h; sourceTree = "<group>"; };
 		417E3E2D19DA107200C3ADF6 /* Book.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Book.m; path = soraCoreDataGenerator/Book.m; sourceTree = "<group>"; };
 		417E3E2F19DA107200C3ADF6 /* Author.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Author.h; path = soraCoreDataGenerator/Author.h; sourceTree = "<group>"; };
 		417E3E3019DA107200C3ADF6 /* Author.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Author.m; path = soraCoreDataGenerator/Author.m; sourceTree = "<group>"; };
 		417E3E3219DA107200C3ADF6 /* BookToAuthors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BookToAuthors.h; path = soraCoreDataGenerator/BookToAuthors.h; sourceTree = "<group>"; };
 		417E3E3319DA107200C3ADF6 /* BookToAuthors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BookToAuthors.m; path = soraCoreDataGenerator/BookToAuthors.m; sourceTree = "<group>"; };
+		4184124F19E0621800F4744A /* MainWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainWindowController.h; sourceTree = "<group>"; };
+		4184125019E0621800F4744A /* MainWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainWindowController.m; sourceTree = "<group>"; };
+		4184125119E0621800F4744A /* MainWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindowController.xib; sourceTree = "<group>"; };
 		41A43DB219DF426B00390CD1 /* BookListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookListViewController.xib; sourceTree = "<group>"; };
 		41A43DB319DF426B00390CD1 /* BookListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookListViewController.h; sourceTree = "<group>"; };
 		41A43DB419DF426B00390CD1 /* BookListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookListViewController.m; sourceTree = "<group>"; };
@@ -53,7 +61,7 @@
 		41A43DB919DF42EE00390CD1 /* AuthorListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AuthorListViewController.xib; sourceTree = "<group>"; };
 		41A43DBC19DF487400390CD1 /* BookModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookModel.h; sourceTree = "<group>"; };
 		41A43DBD19DF487400390CD1 /* BookModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookModel.m; sourceTree = "<group>"; };
-		7238DBCD19D8C55A009B7C3E /* soraCoreDataGenerator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = soraCoreDataGenerator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7238DBCD19D8C55A009B7C3E /* 青空文庫データベース.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "青空文庫データベース.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7238DBD119D8C55A009B7C3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7238DBD219D8C55A009B7C3E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7238DBD419D8C55A009B7C3E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -134,7 +142,7 @@
 		7238DBCE19D8C55A009B7C3E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7238DBCD19D8C55A009B7C3E /* soraCoreDataGenerator.app */,
+				7238DBCD19D8C55A009B7C3E /* 青空文庫データベース.app */,
 				7238DBE319D8C55B009B7C3E /* soraCoreDataGeneratorTests.xctest */,
 			);
 			name = Products;
@@ -149,7 +157,12 @@
 				7238DBFA19D8C983009B7C3E /* Processing.h */,
 				7238DBFB19D8C983009B7C3E /* Processing.m */,
 				7238DBDA19D8C55B009B7C3E /* Images.xcassets */,
+				4184124F19E0621800F4744A /* MainWindowController.h */,
+				4184125019E0621800F4744A /* MainWindowController.m */,
+				4184125119E0621800F4744A /* MainWindowController.xib */,
 				7238DBDC19D8C55B009B7C3E /* MainMenu.xib */,
+				41711A8819E3435000239DD3 /* UpdateDatabase.h */,
+				41711A8919E3435000239DD3 /* UpdateDatabase.m */,
 				41A43D9719DF3B6200390CD1 /* BookViewController */,
 				41A43DAC19DF3F0300390CD1 /* AuthorViewController */,
 				416BAAD119DDBA5100A6E1F8 /* AuthorModel.h */,
@@ -214,7 +227,7 @@
 			);
 			name = soraCoreDataGenerator;
 			productName = soraCoreDataGenerator;
-			productReference = 7238DBCD19D8C55A009B7C3E /* soraCoreDataGenerator.app */;
+			productReference = 7238DBCD19D8C55A009B7C3E /* 青空文庫データベース.app */;
 			productType = "com.apple.product-type.application";
 		};
 		7238DBE219D8C55B009B7C3E /* soraCoreDataGeneratorTests */ = {
@@ -280,6 +293,7 @@
 				7238DBDB19D8C55B009B7C3E /* Images.xcassets in Resources */,
 				7238DBDE19D8C55B009B7C3E /* MainMenu.xib in Resources */,
 				41A43DB519DF426B00390CD1 /* BookListViewController.xib in Resources */,
+				4184125319E0621800F4744A /* MainWindowController.xib in Resources */,
 				41A43DBB19DF42EE00390CD1 /* AuthorListViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -301,9 +315,11 @@
 				7238DBFC19D8C983009B7C3E /* Processing.m in Sources */,
 				7238DBF619D8C899009B7C3E /* CHCSVParser.m in Sources */,
 				41A43DBE19DF487400390CD1 /* BookModel.m in Sources */,
+				4184125219E0621800F4744A /* MainWindowController.m in Sources */,
 				417E3E3119DA107200C3ADF6 /* Author.m in Sources */,
 				41A43DBA19DF42EE00390CD1 /* AuthorListViewController.m in Sources */,
 				41A43DB619DF426B00390CD1 /* BookListViewController.m in Sources */,
+				41711A8A19E3435000239DD3 /* UpdateDatabase.m in Sources */,
 				7238DBD919D8C55B009B7C3E /* soraCoreDataGenerator.xcdatamodeld in Sources */,
 				7238DBD619D8C55A009B7C3E /* AppDelegate.m in Sources */,
 				416BAAD319DDBA5100A6E1F8 /* AuthorModel.m in Sources */,
@@ -427,7 +443,7 @@
 				INFOPLIST_FILE = soraCoreDataGenerator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "青空文庫データベース";
 			};
 			name = Debug;
 		};
@@ -439,7 +455,7 @@
 				INFOPLIST_FILE = soraCoreDataGenerator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "青空文庫データベース";
 			};
 			name = Release;
 		};

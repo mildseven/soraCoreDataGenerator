@@ -35,7 +35,7 @@
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" multipleSelection="NO" autosaveColumns="NO" headerView="vCc-VR-HsM" id="Y8u-Cv-TTT">
-                                                    <rect key="frame" x="0.0" y="0.0" width="560" height="19"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="575" height="19"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <size key="intercellSpacing" width="3" height="2"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -58,7 +58,7 @@
                                                                 <binding destination="I4j-uv-xs0" name="value" keyPath="arrangedObjects.bookID" id="4sc-c6-UfY"/>
                                                             </connections>
                                                         </tableColumn>
-                                                        <tableColumn width="206.6640625" minWidth="40" maxWidth="1000" id="81l-E5-aMo">
+                                                        <tableColumn width="452.96484375" minWidth="40" maxWidth="1000" id="81l-E5-aMo">
                                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="作品名">
                                                                 <font key="font" metaFont="smallSystem"/>
                                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -74,28 +74,12 @@
                                                                 <binding destination="I4j-uv-xs0" name="value" keyPath="arrangedObjects.title" id="PH6-TR-ETH"/>
                                                             </connections>
                                                         </tableColumn>
-                                                        <tableColumn width="228" minWidth="10" maxWidth="3.4028234663852886e+38" id="2Ny-52-AhY">
-                                                            <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="副題">
-                                                                <font key="font" metaFont="smallSystem"/>
-                                                                <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
-                                                                <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
-                                                            </tableHeaderCell>
-                                                            <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" alignment="left" title="Text Cell" id="cq6-aa-EQ5">
-                                                                <font key="font" metaFont="system"/>
-                                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                                                <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                            </textFieldCell>
-                                                            <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
-                                                            <connections>
-                                                                <binding destination="I4j-uv-xs0" name="value" keyPath="arrangedObjects.subTitle" id="rO9-Gj-XWI"/>
-                                                            </connections>
-                                                        </tableColumn>
                                                     </tableColumns>
                                                 </tableView>
                                             </subviews>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </clipView>
-                                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="kld-7J-RXw">
+                                        <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="kld-7J-RXw">
                                             <rect key="frame" x="1" y="117.99814355373383" width="238" height="16"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </scroller>
@@ -161,6 +145,7 @@
                                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                 </textFieldCell>
+                                                <sortDescriptor key="sortDescriptorPrototype" selector="compare:" sortKey="lastNameYomi"/>
                                                 <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                 <connections>
                                                     <binding destination="MBg-Us-Adj" name="value" keyPath="arrangedObjects.lastName" id="Vi4-nP-1My"/>
@@ -177,6 +162,7 @@
                                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                 </textFieldCell>
+                                                <sortDescriptor key="sortDescriptorPrototype" selector="compare:" sortKey="firstName"/>
                                                 <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                 <connections>
                                                     <binding destination="MBg-Us-Adj" name="value" keyPath="arrangedObjects.firstName" id="VR9-OG-J51"/>
@@ -227,7 +213,7 @@
             <point key="canvasLocation" x="-245" y="12"/>
         </customView>
         <customObject id="gXg-XD-ecH" customClass="AppDelegate"/>
-        <arrayController mode="entity" entityName="Author" editable="NO" automaticallyPreparesContent="YES" id="MBg-Us-Adj" userLabel="Author Array Controller">
+        <arrayController mode="entity" entityName="Author" automaticallyPreparesContent="YES" selectsInsertedObjects="NO" id="MBg-Us-Adj" userLabel="Author Array Controller">
             <connections>
                 <binding destination="gXg-XD-ecH" name="managedObjectContext" keyPath="self.managedObjectContext" id="O1C-Ch-zIu"/>
             </connections>
